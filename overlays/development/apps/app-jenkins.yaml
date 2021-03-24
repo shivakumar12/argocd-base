@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-jenkins
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: jenkins
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: charts/jenkins
+    repoURL: 'https://github.com/subhakar-ci-cd/helm-charts'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions: []

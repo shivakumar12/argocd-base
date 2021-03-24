@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-cm
+  namespace: argocd
+data:
+  repositories: |
+    - url: https://github.com/shivakumar12/argo-deployer
+      type: git
+    - url: https://github.com/shivakumar12/metal-alb
+      type: git
+    - url: https://github.com/shivakumar12/ingress-nginx
+      type: git
+    - url: https://github.com/shivakumar12/istooperator
+      type: git
