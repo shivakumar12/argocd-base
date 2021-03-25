@@ -3,9 +3,6 @@ kind: Kustomization
 bases:
   - ../../base
 resources:
- #- app-argocd.yaml
- #- app-of-apps.yaml
- #- app-of-prerequisites.yaml
+
 patchesStrategicMerge:
-  #- argocd-server-service.yaml
   - argocd-configmap.yaml
